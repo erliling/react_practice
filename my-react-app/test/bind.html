@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function demo() {
+        console.log(this);
+      }
+      demo();
+      // apply 1, change this
+      // new method
+      const x = demo.bind({ a: 1, b: 2 });
+      // this changes to {...}
+      x();
+
+      // apply 2, an obj can borrow a method from another obj
+      const person = {
+        first: "john",
+        last: "doe",
+        fullname: function () {
+          return this.first + this.last;
+        },
+      };
+      const member = {
+        first: "hege",
+        last: "nilsen",
+      };
+      let fullname = person.fullname.bind(member);
+      console.log(fullname());
+
+      // When a function is used as a callback, this is lost.
+      // apply 3, keep this
+      const person2 = {
+        first: "john",
+        last: "doe",
+        fullname: function () {
+          const x = document.getElementById("demo");
+          x.innerHTML = this.first + this.last;
+        },
+      };
+      const display = person2.fullname.bind(person2);
+      // setTimeout(person2.fullname, 3000); // NaN
+      setTimeout(display, 3000);
+
+      // apply 3, keep this
+      const person3 = {
+        first: "john",
+        last: "doe",
+        fullname: function () {
+          console.log(this.first + this.last);
+        },
+      };
+      const display2 = person3.fullname.bind(person3);
+      setTimeout(display2, 3000);
+    </script>
+  </head>
+  <body>
+    <div id="demo"></div>
+  </body>
+</html>

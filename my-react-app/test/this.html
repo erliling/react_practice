@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        study() {
+          console.log(this);
+        }
+      }
+      const p1 = new Person("lily", 18);
+      // call using instance
+      p1.study();
+      const x = p1.study;
+      // call directly
+      x();
+    </script>
+  </head>
+  <body></body>
+</html>
