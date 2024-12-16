@@ -14,7 +14,8 @@ function App() {
       <Hello></Hello>
     </div>
     <div>
-      <Welcome></Welcome>
+      <Welcome name = "jerry" age="10" gender="male"></Welcome>
+      <Welcome name = "tom" age="12" gender="female"></Welcome>
     </div>
       <div>
         <a href="https://vite.dev" target="_blank">

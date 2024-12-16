@@ -1,21 +1,14 @@
 import React, {useState} from 'react'
 
-export default function index() {
-    const [isHot, setCount] = useState("hot") 
-
-    const demo = () => {
-        console.log("I've been clicked");
-        console.log("this = "+ this);
-      }
+export default function index(props) {
+    const {name, age, gender} = props;
   return (
     <div>
-        <h1 onClick={demo}>{isHot}</h1>
+        <ul>
+            <li>name: {name}</li>
+            <li>age: {age}</li>
+            <li>gender: {gender}</li>
+        </ul>
     </div>
   )
-
-//   function demo() {
-//     console.log("I've been clicked");
-//     console.log("this = "+ this);
-
-//   }
 }
