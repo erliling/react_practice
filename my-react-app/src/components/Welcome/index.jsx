@@ -1,29 +1,31 @@
-import React, {useState} from 'react'
-import PropTypes from 'prop-types';
+import React, {useState, useRef} from 'react'
 
-function index(props) {
-    const {name, age, gender} = props;
+export default function index(props) {
+  const [username, setUsername] = useState("username")  
+  const [password, setPassword] = useState("password")  
+  
+    // const myRef1 = useRef(null);
+    // const myRef2 = useRef(null);
+
+    // need to have let in front
+    let handleSubmit = () =>{
+        // myRef.current.focus();
+        alert(username + " " + password);
+    }
+    let saveUsername = (event) => {
+      setUsername(event.target.value);
+    }
+    let savePassword = (event) => {
+      setPassword(event.target.value);
+    }
   return (
     <div>
-        <ul>
-            <li>name: {name}</li>
-            <li>age: {age+1}</li>
-            <li>gender: {gender}</li>
-        </ul>
+        <form action="" onSubmit={handleSubmit}>
+            username: <input type="text" name="username" onChange={saveUsername}/>
+            password: <input type="password" name="password" onChange={savePassword}/>
+            <button>log in</button>
+        </form>
     </div>
   )
 }
 
-index.propTypes = {
-    name: PropTypes.string.isRequired,
-    age: PropTypes.number,
-    gender: PropTypes.string,
-}
-
-index.defaultProps = {
-    name: "erli",
-    age: 10,
-    gender: "male"
-}
-
-export default index;

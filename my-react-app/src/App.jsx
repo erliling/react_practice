@@ -15,8 +15,8 @@ function App() {
       <Hello></Hello>
     </div>
     <div>
-      <Welcome {...prop}></Welcome>
-      <Welcome name = "tom" age={12} gender="female"></Welcome>
+      {/* <Welcome {...prop}></Welcome>
+      <Welcome name = "tom" age={12} gender="female"></Welcome> */}
       <Welcome></Welcome>
     </div>
       <div>
