@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Hello from './components/Hello'
 import Welcome from './components/Welcome'
+import './components/Welcome/index.css'
 
 function App() {
   const [count, setCount] = useState(0)
