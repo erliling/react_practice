@@ -3,12 +3,12 @@ import Item from '../Item'
 import './index.css'
 
 export default function index(props) {
-    const {todos, updateTodo} = props;
+    const {todos} = props;
   return (
     <ul className="todo-main">
         {
             todos.map( todo => {
-                return <Item key={todo.id} {...todo} updateTodo={updateTodo}/>
+                return <Item key={todo.id} {...todo}/>
             })
         }
     </ul>

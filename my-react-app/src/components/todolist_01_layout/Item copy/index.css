@@ -20,7 +20,7 @@ li label input {
 
 li button {
     float: right;
-    display: none;
+    /* display: none; */
     margin-top: 3px;
 }
 

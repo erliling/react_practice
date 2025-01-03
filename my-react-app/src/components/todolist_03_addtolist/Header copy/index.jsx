@@ -1,14 +1,12 @@
 import React from 'react'
 import './index.css'
 import {nanoid} from 'nanoid'
-import PropTypes from 'prop-types'
 
 export default function index(props) {
-
     const {addTodo} = props
     const handleKeyUp = (event) => {
         const {keyCode, target} = event
-        if (keyCode != 13) return
+        if (event.keyCode != 13) return
         const todoItem = {id: nanoid(), name: target.value, done: false}
         addTodo(todoItem)
         target.value = ''
@@ -19,8 +17,4 @@ export default function index(props) {
         <input type="text" placeholder='please type enter' onKeyUp={handleKeyUp}/>
     </div>
   )
-}
-
-index.propTypes = {
-    addTodo:PropTypes.func.isRequired
 }
