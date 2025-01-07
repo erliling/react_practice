@@ -1,8 +1,8 @@
-// import React from 'react'
+import React from 'react'
+import './index.css'
 import { useState } from 'react'
 import PropTypes from 'prop-types'
-import index from '../Hello'
-import './index.css'
+import index from '../../Hello'
 
 
 export default function (props) {

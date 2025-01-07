@@ -1,7 +1,7 @@
-import React from 'react'
-import './index.css'
+// import React from 'react'
 import {nanoid} from 'nanoid'
 import PropTypes from 'prop-types'
+import './index.css'
 
 export default function index(props) {
 

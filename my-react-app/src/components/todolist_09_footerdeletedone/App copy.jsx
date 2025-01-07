@@ -1,13 +1,12 @@
 import { useState } from 'react'
-
-import Header from './components/Header'
-import List from './components/List'
-import Footer from './components/Footer'
-
-import './App.css'
-import './components/Welcome/index.css'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import './App.css'
+import './components/Welcome/index.css'
+import Header from '../Header'
+import List from '../List'
+import Footer from '../Footer'
+
 
 
 function App() {

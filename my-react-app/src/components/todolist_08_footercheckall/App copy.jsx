@@ -1,13 +1,12 @@
 import { useState } from 'react'
-
-import Header from './components/Header'
-import List from './components/List'
-import Footer from './components/Footer'
-
-import './App.css'
-import './components/Welcome/index.css'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import './App.css'
+import './components/Welcome/index.css'
+import Header from '../Header'
+import List from '../List'
+import Footer from '../Footer'
+
 
 
 function App() {
@@ -46,19 +45,12 @@ function App() {
     setTodos(newTodos)
   }
 
-  const deleteDoneTodo = () => {
-    const newTodos = todos.filter((todoObj) => {
-      return !todoObj.done
-    })
-    setTodos(newTodos)
-  }
-
   return (
     <div className='todo-contianer'>
       <div className='todo-wrap'>
         <Header addTodo={addTodo}></Header>
         <List todos={todos} updateTodo={updateTodo} deleteTodo={deleteTodo}></List>
-        <Footer todos={todos} updateTodoCheckall={updateTodoCheckall} deleteDoneTodo={deleteDoneTodo}></Footer>
+        <Footer todos={todos} updateTodoCheckall={updateTodoCheckall}></Footer>
       </div>
     </div>
   
