@@ -10,10 +10,19 @@ import './components/Welcome/index.css'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
-
+// https://api.github.com/search/users?q=asdf
 function App() {
   const getStudentData = () => {
-    axios.get('http://localhost:5173/index3.html').then(
+    axios.get('/2api/students').then(
+      response => {
+        console.log('success', response.data)
+      },
+      error => {console.log('failed', error)}
+    )
+  }
+
+  const getGithubData = () => {
+    axios.get('/api/search/users?q=asdf').then(
       response => {
         console.log('success', response.data)
       },
@@ -22,9 +31,14 @@ function App() {
   }
 
   return (
+    <>
     <div>
       <button onClick={getStudentData}>get student data</button>
     </div>
+    <div>
+      <button onClick={getGithubData}>get github data</button>
+    </div>
+    </>
   )
 }
 
