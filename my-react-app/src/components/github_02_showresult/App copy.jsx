@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import axios from 'axios'
 
-import List from './components/List'
-import Search from './components/Search'
+import List from '../List'
+import Search from '../Search'
 
 import './App.css'
 import './components/todolist_10_refine/Welcome/index.css'

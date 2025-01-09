@@ -3,8 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Hello from './components/Hello'
-import Welcome from './components/Welcome'
-import './components/Welcome/index.css'
+import Welcome from './components/todolist_10_refine/Welcome'
+import './components/todolist_10_refine/Welcome/index.css'
 
 function App() {
   const [count, setCount] = useState(0)

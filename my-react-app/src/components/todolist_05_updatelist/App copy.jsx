@@ -5,7 +5,7 @@ import './App.css'
 import './components/Welcome/index.css'
 import Header from '../Header'
 import List from '../List'
-import Footer from '../Footer'
+import Footer from '../todolist_10_refine/Footer'
 
 
 
