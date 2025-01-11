@@ -1,6 +1,5 @@
 import React, {createContext, useContext, useState, useEffect} from 'react'
-// import PubSub from 'pubsub-js'
-import EventEmitter from 'eventemitter3'
+import PubSub from 'pubsub-js'
 
 import './index.css'
 
@@ -11,40 +10,22 @@ export default function index(props) {
     const [isFirst, setIsFirst] = useState(true)
     const [isLoading, setIsLoading] = useState(false)
     const [err, setErr] = useState('')
-    // var token = ''
-    // const eventEmitter = new EventEmitter()
+    var token = ''
     // const appStatus = {users, isFirst, isLoading, err}
 
 
-    // useEffect(() => {
-    //     const saveAllData = (allData) => {
-    //         const {users, isFirst, isLoading, err} = allData
-    //         setUsers(users)
-    //         setIsFirst(isFirst)
-    //         setIsLoading(isLoading)
-    //         setErr(err)
-    //     }
-    //     eventEmitter.on('erli', saveAllData)
-    //     return () => {
-    //         eventEmitter.off('erli', saveAllData)
-    //     }
-    // }, [])
-
     useEffect(() => {
-        // used not work cz forgot 'erli' id
-        const token = PubSub.subscribe('erli', (msg, data) => {
-            const {users, isFirst, isLoading, err} = data
+        token = PubSub.subscribe('erli', (_, appStatus) => {
+            const {users, isFirst, isLoading, err} = appStatus
             setUsers(users)
             setIsFirst(isFirst)
             setIsLoading(isLoading)
             setErr(err)
         })
-        return () => PubSub.unsubscribe(token)
+        return () => {
+            PubSub.unsubscribe(token)
+        }
     }, [])
-
-    // const handlePublish = () => {
-    //     PubSub.publish('erli', 'hello from erli')
-    // }
 
   return (
     <div>

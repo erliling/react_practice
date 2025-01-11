@@ -12,39 +12,23 @@ export default function index(props) {
     const [isLoading, setIsLoading] = useState(false)
     const [err, setErr] = useState('')
     // var token = ''
-    // const eventEmitter = new EventEmitter()
+    const eventEmitter = new EventEmitter()
     // const appStatus = {users, isFirst, isLoading, err}
 
 
-    // useEffect(() => {
-    //     const saveAllData = (allData) => {
-    //         const {users, isFirst, isLoading, err} = allData
-    //         setUsers(users)
-    //         setIsFirst(isFirst)
-    //         setIsLoading(isLoading)
-    //         setErr(err)
-    //     }
-    //     eventEmitter.on('erli', saveAllData)
-    //     return () => {
-    //         eventEmitter.off('erli', saveAllData)
-    //     }
-    // }, [])
-
     useEffect(() => {
-        // used not work cz forgot 'erli' id
-        const token = PubSub.subscribe('erli', (msg, data) => {
-            const {users, isFirst, isLoading, err} = data
+        const saveAllData = (allData) => {
+            const {users, isFirst, isLoading, err} = allData
             setUsers(users)
             setIsFirst(isFirst)
             setIsLoading(isLoading)
             setErr(err)
-        })
-        return () => PubSub.unsubscribe(token)
+        }
+        eventEmitter.on('erli', saveAllData)
+        return () => {
+            eventEmitter.off('erli', saveAllData)
+        }
     }, [])
-
-    // const handlePublish = () => {
-    //     PubSub.publish('erli', 'hello from erli')
-    // }
 
   return (
     <div>

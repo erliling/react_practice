@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import PubSub from 'pubsub-js'
 
-import List from './components/List'
-import Search from './components/Search'
+import List from '../List'
+import Search from '../Search'
 
 import './App.css'
 import { useEffect } from 'react'
