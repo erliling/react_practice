@@ -1,33 +1,43 @@
 import { useState } from 'react'
 import PubSub from 'pubsub-js'
+import { BrowserRouter, Link, Outlet, Route, Routes} from 'react-router-dom'
 
-import List from './components/List'
-import Search from './components/Search'
+import Home from './pages/Home'
+import About from './pages/About'
 
 import './App.css'
 import { useEffect } from 'react'
 
-// https://api.github.com/search/users?q=asdf
 function App() {
   // const [message, setMessage] = useState('')
 
-  // useEffect(() => {
-  //   const token = PubSub.subscribe('erli', (msg, data) => {
-  //     setMessage(data)
-  //   })
-  //   return () => PubSub.unsubscribe(token)
-  // }, [])
-
-  // const handlePublish = () => {
-  //   PubSub.publish('erli', 'hello from erli')
-  // }
-
   return (
     <div className='container'>
-      <Search></Search>
-      <List></List>
-      {/* <button onClick={handlePublish}>Publish</button>
-      <p>{message}</p> */}
+      <div className='row'>
+        <div className='col-xs-offset-2 col-xs-8'>
+          <div className='page-header'><h2>React Router Demo</h2></div>
+        </div>
+      </div>
+      <div className='row'>
+        <div className="col-xs-2 col-xs-offset-2">
+          <div className='list-group'>
+            <Link className="list-group-item" to="/about">About</Link>
+            <Link className="list-group-item" to="/home">Home</Link>
+          </div>
+        </div>
+        <div className='col-xs-6'>
+          <div className='panel'>
+            <div className='panel-body'>
+              <Routes>
+                <Route path='/about' element={<About/>}></Route>
+                <Route path='/home' element={<Home/>}></Route>
+                {/* <Route path='*' element={<App/>}></Route> */}
+              </Routes>
+              {/* <Outlet></Outlet> */}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
