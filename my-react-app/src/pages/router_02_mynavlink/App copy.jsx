@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import PubSub from 'pubsub-js'
-import { BrowserRouter, Link, NavLink, Outlet, Route, Routes, Navigate} from 'react-router-dom'
+import { BrowserRouter, Link, NavLink, Outlet, Route, Routes} from 'react-router-dom'
 
-import Home from './pages/Home'
-import Home2 from './pages/Home2'
-import About from './pages/About'
-import MyNavLink from './components/MyNavLink'
+import Home from '../Home'
+import About from '../About'
+import MyNavLink from '../../components/MyNavLink'
 
 import './App.css'
 import { useEffect } from 'react'
@@ -23,8 +22,8 @@ function App() {
       <div className='row'>
         <div className="col-xs-2 col-xs-offset-2">
           <div className='list-group'>
-            <MyNavLink to="/about">About</MyNavLink>
-            <MyNavLink to="/home/a">Home</MyNavLink>
+            <MyNavLink to="/atguigu/about">About</MyNavLink>
+            <MyNavLink to="/atguigu/home">Home</MyNavLink>
             {/* <NavLink className={({isActive})=>(isActive?'erli':"list-group-item")} to="/home">Home</NavLink> */}
           </div>
         </div>
@@ -32,11 +31,8 @@ function App() {
           <div className='panel'>
             <div className='panel-body'>
               <Routes>
-                <Route path='/about' element={<About/>}></Route>
-                <Route exact={false} path='/home' element={<Home/>}></Route>
-                <Route path='/' element={<Navigate to="/about"/>}></Route>
-                {/* <Route path='/' element={<Home2/>}></Route> */}
-                {/* <Navigate to="/about"/> */}
+                <Route path='/atguigu/about' element={<About/>}></Route>
+                <Route path='/atguigu/home' element={<Home/>}></Route>
                 {/* <Route path='*' element={<App/>}></Route> */}
               </Routes>
               {/* <Outlet></Outlet> */}
