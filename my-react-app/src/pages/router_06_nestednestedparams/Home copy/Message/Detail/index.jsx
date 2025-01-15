@@ -1,6 +1,5 @@
 import React from 'react'
-import { useParams, useLocation } from 'react-router-dom'
-import querystring from 'query-string'
+import { useParams } from 'react-router-dom'
 
 export default function index() {
   const detailData = [
@@ -8,14 +7,11 @@ export default function index() {
     {id:'02', content:'welcome'},
     {id:'03', content:'hola'},
   ]
-  // const {search} = useLocation()
-  // const {id, title} = querystring.parse(search.slice(1))
-  
-  console.log(useLocation())
-  const {id, title} = useLocation().state || {}
+  // console.log(props)
+  const {id, title} = useParams()
   const content = detailData.find((detailObj) => {
     return detailObj.id === id
-  }) || {}
+  })
   return (
     <ul>
         <li>ID: {id}</li>

@@ -8,14 +8,12 @@ export default function index() {
     {id:'02', content:'welcome'},
     {id:'03', content:'hola'},
   ]
-  // const {search} = useLocation()
-  // const {id, title} = querystring.parse(search.slice(1))
-  
-  console.log(useLocation())
-  const {id, title} = useLocation().state || {}
+  // console.log(props)
+  const {search} = useLocation()
+  const {id, title} = querystring.parse(search.slice(1))
   const content = detailData.find((detailObj) => {
     return detailObj.id === id
-  }) || {}
+  })
   return (
     <ul>
         <li>ID: {id}</li>

@@ -6,6 +6,7 @@ import Message from './Message'
 import MyNavLink from '../../components/MyNavLink'
 
 export default function index() {
+  
   return (
     <div>
       <h3>this is home</h3>
