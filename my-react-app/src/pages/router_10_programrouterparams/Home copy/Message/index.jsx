@@ -13,9 +13,7 @@ export default function index() {
     const navigate = useNavigate()
     const handleReplace = (id, title, flag)=> {
         return () => {
-            // navigate(`/home/message/detail/${id}/${title}`, {replace: flag})
-            // navigate(`/home/message/detail?id=${id}&title=${title}`, {replace: flag})
-            navigate(`/home/message/detail`, {state: {id:id, title: title}, replace: flag})
+            navigate(`/home/message/detail/${id}/${title}`, {replace: flag})
         }
     }
   return (

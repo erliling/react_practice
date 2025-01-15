@@ -11,11 +11,9 @@ export default function index() {
     ])
 
     const navigate = useNavigate()
-    const handleReplace = (id, title, flag)=> {
+    const handleReplace = (id, title)=> {
         return () => {
-            // navigate(`/home/message/detail/${id}/${title}`, {replace: flag})
-            // navigate(`/home/message/detail?id=${id}&title=${title}`, {replace: flag})
-            navigate(`/home/message/detail`, {state: {id:id, title: title}, replace: flag})
+            navigate(`/home/message/detail/${id}/${title}`, {replace: true})
         }
     }
   return (
@@ -31,8 +29,8 @@ export default function index() {
                             {/* <Link to={`/home/message/detail/${msgObj.id}/${msgObj.title}`}>{msgObj.title}</Link> */}
                             {/* <Link to={`/home/message/detail/?id=${msgObj.id}&title=${msgObj.title}`}>{msgObj.title}</Link> */}
                             <Link to='/home/message/detail/' state={{id:msgObj.id, title:msgObj.title}}>{msgObj.title}</Link>
-                            &nbsp;<button onClick={handleReplace(msgObj.id, msgObj.title, false)}>push</button>
-                            &nbsp;<button onClick={handleReplace(msgObj.id, msgObj.title, true)}>replace</button>
+                            &nbsp;<button>push</button>
+                            &nbsp;<button onClick={handleReplace(msgObj.id, msgObj.title)}>replace</button>
                         </li>
                     )
                 })
