@@ -18,8 +18,10 @@ export default function index() {
                         <li key={msgObj.id}>
                             {/* <a href='/xxx'>{msgObj.title}</a> */}
                             {/* <Link to='/home/message/detail'>{msgObj.title}</Link> */}
+
                             {/* <Link to={`/home/message/detail/${msgObj.id}/${msgObj.title}`}>{msgObj.title}</Link> */}
-                            <Link to={`/home/message/detail/?id=${msgObj.id}&title=${msgObj.title}`}>{msgObj.title}</Link>
+                            {/* <Link to={`/home/message/detail/?id=${msgObj.id}&title=${msgObj.title}`}>{msgObj.title}</Link> */}
+                            <Link to='/home/message/detail/' state={{id:msgObj.id, title:msgObj.title}}>{msgObj.title}</Link>
                         </li>
                     )
                 })
