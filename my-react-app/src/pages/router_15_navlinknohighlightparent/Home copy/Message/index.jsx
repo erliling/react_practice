@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Link, Route, Routes, useNavigate, Outlet } from 'react-router-dom'
+import { Link, Route, Routes, useNavigate } from 'react-router-dom'
 
 import Detail from './Detail'
 
@@ -39,11 +39,10 @@ export default function index() {
             }
         </ul>
         <hr />
-        {/* <Routes> */}
+        <Routes>
             {/* <Route path='detail/:id/:title' element={<Detail/>}/>  */}
-            {/* <Route path='detail' element={<Detail/>}/> 
-        </Routes> */}
-        <Outlet></Outlet>
+            <Route path='detail' element={<Detail/>}/> 
+        </Routes>
     </div>
   )
 }

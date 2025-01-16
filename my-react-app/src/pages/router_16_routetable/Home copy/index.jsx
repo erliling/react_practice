@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import { Routes, Route, Navigate, useNavigate, Outlet } from 'react-router-dom'
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom'
 
 import News from './News'
 import Message from './Message'
-import MyNavLink from '../../components/MyNavLink'
+import MyNavLink from '../../../components/MyNavLink'
 
 export default function index() {
   const [sum, setSum] = useState(0)
@@ -33,15 +33,13 @@ export default function index() {
             <MyNavLink to='/home/message'>Message</MyNavLink>
           </li>
         </ul>
-        {/* <Routes>
+        <Routes>
             <Route path='news' element={<News/>}/>
-            <Route path='message/*' element={<Message/>}/> */}
+            <Route path='message/*' element={<Message/>}/>
             {/* <Route exact={false} path='/home/news' element={<News/>}></Route>
             <Route exact={false} path='/home/message' element={<Message/>}></Route> */}
             {/* <Route exact={false} path='/' element={<Navigate to="/home/news"/>}></Route> */}
-        {/* </Routes> */}
-
-        <Outlet></Outlet>
+        </Routes>
       </div>
     </div>
   )

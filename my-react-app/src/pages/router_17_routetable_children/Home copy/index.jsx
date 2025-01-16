@@ -3,7 +3,7 @@ import { Routes, Route, Navigate, useNavigate, Outlet } from 'react-router-dom'
 
 import News from './News'
 import Message from './Message'
-import MyNavLink from '../../components/MyNavLink'
+import MyNavLink from '../../../components/MyNavLink'
 
 export default function index() {
   const [sum, setSum] = useState(0)

@@ -2,15 +2,13 @@ import { useState } from 'react'
 import PubSub from 'pubsub-js'
 import { BrowserRouter, Link, NavLink, Outlet, Route, Routes, Navigate, useRoutes } from 'react-router-dom'
 
-import Home from './pages/Home'
-import Home2 from './pages/Home2'
-import About from './pages/About'
-import MyNavLink from './components/MyNavLink'
-import News from './pages/Home/News'
-import Message from './pages/Home/Message'
-import Header from './components/Header'
-import Detail from './pages/Home/Message/Detail'
-
+import Home from '../Home'
+import Home2 from '../Home2'
+import About from '../About'
+import MyNavLink from '../../components/MyNavLink'
+import News from '../Home/News'
+import Message from '../Home/Message'
+import Header from '../../components/Header'
 // import routes from './routes'
 
 import './App.css'
@@ -33,13 +31,7 @@ function App() {
         },
         {
           path: 'message/*',
-          element: <Message/>,
-          children: [
-            {
-              path: 'detail',
-              element: <Detail/>
-            }
-          ]
+          element: <Message/>
         },
       ]
     },

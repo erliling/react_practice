@@ -1,55 +1,20 @@
 import { useState } from 'react'
 import PubSub from 'pubsub-js'
-import { BrowserRouter, Link, NavLink, Outlet, Route, Routes, Navigate, useRoutes } from 'react-router-dom'
+import { BrowserRouter, Link, NavLink, Outlet, Route, Routes, Navigate} from 'react-router-dom'
 
-import Home from './pages/Home'
-import Home2 from './pages/Home2'
-import About from './pages/About'
-import MyNavLink from './components/MyNavLink'
-import News from './pages/Home/News'
-import Message from './pages/Home/Message'
-import Header from './components/Header'
-import Detail from './pages/Home/Message/Detail'
-
-// import routes from './routes'
+import Home from '../Home'
+import Home2 from '../Home2'
+import About from '../About'
+import MyNavLink from '../../components/MyNavLink'
+import News from '../Home/News'
+import Message from '../Home/Message'
+import Header from '../../components/Header'
 
 import './App.css'
 import { useEffect } from 'react'
 
 function App() {
   // const [message, setMessage] = useState('')
-  const routeTable = useRoutes([
-    {
-      path: 'about',
-      element: <About/>
-    },
-    {
-      path: 'home/*',
-      element: <Home/>,
-      children: [
-        {
-          path: 'news',
-          element: <News/>
-        },
-        {
-          path: 'message/*',
-          element: <Message/>,
-          children: [
-            {
-              path: 'detail',
-              element: <Detail/>
-            }
-          ]
-        },
-      ]
-    },
-    {
-      path: '',
-      element: <Navigate to='/about' />
-    },
-  ])
-
-  // const routeTable2 = useRoutes(routes)
 
   return (
     <div className='container'>
@@ -61,26 +26,25 @@ function App() {
       <div className='row'>
         <div className="col-xs-2 col-xs-offset-2">
           <div className='list-group'>
-            <MyNavLink to="about">About</MyNavLink>
-            <MyNavLink to="home" end>Home</MyNavLink>
+            <MyNavLink to="/about">About</MyNavLink>
+            <MyNavLink to="/home" end>Home</MyNavLink>
             {/* <NavLink className={({isActive})=>(isActive?'erli':"list-group-item")} to="/home">Home</NavLink> */}
           </div>
         </div>
         <div className='col-xs-6'>
           <div className='panel'>
             <div className='panel-body'>
-              {/* <Routes>
+              <Routes>
                 <Route path='about' element={<About/>}></Route>
                 <Route path='home/*' element={<Home/>}>
                   <Route path='news' element={<News/>}/>
                   <Route path='message' element={<Message/>}/>
                 </Route>
-                <Route path='/' element={<Navigate to="/about"/>}></Route> */}
+                <Route path='/' element={<Navigate to="/about"/>}></Route>
                 {/* <Route path='/' element={<Home2/>}></Route> */}
                 {/* <Navigate to="/about"/> */}
                 {/* <Route path='*' element={<App/>}></Route> */}
-              {/* </Routes> */}
-              {routeTable}
+              </Routes>
               {/* <Outlet></Outlet> */}
             </div>
           </div>
