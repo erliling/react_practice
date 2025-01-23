@@ -1,6 +1,7 @@
 import React, {useState, useRef} from 'react'
 
 import store from '../../redux/store'
+import { createIncrementAction, createDecrementAction, createAsyncIncrementAction } from '../../redux/count_action'
 
 export default function index() {
 
@@ -10,23 +11,24 @@ export default function index() {
     const handleAdd = () => {
         // console.log(selectRef.current.value)
         // setCount(count+selectRef.current.value*1)
-        store.dispatch({type:'increment', data: selectRef.current.value*1})
+        // store.dispatch({type:'increment', data: selectRef.current.value*1})
+        store.dispatch(createIncrementAction(selectRef.current.value*1))
     }
     const handleMinus = () => {
-        setCount(count-selectRef.current.value*1)
-        
+        // setCount(count-selectRef.current.value*1)
+        store.dispatch(createDecrementAction(selectRef.current.value*1))
     }
     const handleOdd = () => {
+        const count = store.getState()
         if (count%2 !== 0) {
-            setCount(count+selectRef.current.value*1)
-            
+            store.dispatch(createIncrementAction(selectRef.current.value*1))
         }
     }
     const handleAsync = () => {
-        setTimeout (() => {
-            setCount(count+selectRef.current.value*1)
-
-        }, 500)
+        // setTimeout (() => {
+        //     store.dispatch(createIncrementAction(selectRef.current.value*1))
+        // }, 500)
+        store.dispatch(createAsyncIncrementAction(selectRef.current.value*1, 500))
     }
   return (
     <div>
