@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import React, {useState, useRef} from 'react'
 
 // import CountUI from '../../components/Count'
-import {createIncrementAction, createDecrementAction, createAsyncIncrementAction} from '../../redux/count_action'
+import {createIncrementAction, createDecrementAction, createAsyncIncrementAction} from '../../redux/actions/count'
 
 function Count(props) {
 
@@ -48,7 +48,7 @@ function Count(props) {
 
 
 export default connect(
-    state => ({count: state}),
+    state => ({count: state.he}),
     {
         jia:createIncrementAction,
         jian:createDecrementAction,
