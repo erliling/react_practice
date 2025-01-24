@@ -1,8 +1,8 @@
 
 import {connect} from 'react-redux'
 
-import CountUI from '../../components/Count'
-import {createIncrementAction, createDecrementAction, createAsyncIncrementAction} from '../../redux/count_action'
+import CountUI from '../../../Count'
+import {createIncrementAction, createDecrementAction, createAsyncIncrementAction} from '../../../../redux/count_action'
 
 // const mapState2Props = state => ({count: state})
 
