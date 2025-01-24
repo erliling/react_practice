@@ -1,9 +1,11 @@
+
+import {connect} from 'react-redux'
 import React, {useState, useRef} from 'react'
 
-// import store from '../../redux/store'
-// import { createIncrementAction, createDecrementAction, createAsyncIncrementAction } from '../../redux/count_action'
+// import CountUI from '../../components/Count'
+import {createIncrementAction, createDecrementAction, createAsyncIncrementAction} from '../../../../redux/count_action'
 
-export default function index(props) {
+function Count(props) {
 
     // const [count, setCount] = useState(0)
     const selectRef = useRef(null)
@@ -43,3 +45,13 @@ export default function index(props) {
     </div>
   )
 }
+
+
+export default connect(
+    state => ({count: state}),
+    {
+        jia:createIncrementAction,
+        jian:createDecrementAction,
+        asyncjia:createAsyncIncrementAction
+    }
+    )(Count)
