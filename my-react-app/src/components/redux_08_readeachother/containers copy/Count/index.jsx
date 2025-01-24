@@ -32,7 +32,10 @@ function Count(props) {
     }
   return (
     <div>
-        <h1>current sum = {props.count}</h1>
+        <h1>Count Component</h1>
+        <h4>number of person from person component: {props.person.length}</h4>
+
+        <h2>current sum = {props.count}</h2>
         <select name="" id="" ref={selectRef}>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -48,7 +51,7 @@ function Count(props) {
 
 
 export default connect(
-    state => ({count: state.he}),
+    state => ({count: state.he, person: state.ren}),
     {
         jia:createIncrementAction,
         jian:createDecrementAction,

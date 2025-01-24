@@ -16,8 +16,8 @@ function Person(props) {
     }
   return (
     <div>
-        <h2>Person Component</h2>
-        <h4>count: {props.count}</h4>
+        <h1>Person Component</h1>
+        <h4>count from count component: {props.count}</h4>
         <input type="text" ref={nameInput} />
         <input type="text" ref={ageInput} />
         <button onClick={addPerson}>Add Person</button>
@@ -35,7 +35,7 @@ function Person(props) {
 }
 
 export default connect(
-    state => ({person: state.ren}),
+    state => ({person: state.ren, count: state.he}),
     {
         addperson: createAddPersonAction
     }
