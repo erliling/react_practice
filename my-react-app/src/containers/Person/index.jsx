@@ -13,6 +13,7 @@ function Person(props) {
         props.addperson({id:nanoid(), name, age})
         nameInput.current.value = ''
         ageInput.current.value = ''
+        // props.createIncrementAction
     }
   return (
     <div>
@@ -35,7 +36,7 @@ function Person(props) {
 }
 
 export default connect(
-    state => ({person: state.ren, count: state.he}),
+    state => ({person: state.person, count: state.count}),
     {
         addperson: createAddPersonAction
     }
