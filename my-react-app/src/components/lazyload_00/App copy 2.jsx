@@ -5,20 +5,20 @@ import { BrowserRouter, Link, NavLink, Outlet, Route, Routes, Navigate, useRoute
 // import Home from './pages/Home'
 // import Home2 from './Home2'
 // import About from './pages/About'
-import MyNavLink from './components/MyNavLink'
-import News from './pages/Home/News'
-import Message from './pages/Home/Message'
+import MyNavLink from '../MyNavLink'
+import News from '../../pages/Home/News'
+import Message from '../../pages/Home/Message'
 // import Header from '../../components/Header'
-import Detail from './pages/Home/Message/Detail'
-import Loading from './components/Loading'
+import Detail from '../../pages/Home/Message/Detail'
+import Loading from '../Loading'
 
 // import routes from './routes'
 
 import './App.css'
 import { useEffect } from 'react'
 
-const Home = lazy(()=>import('./pages/Home'))
-const About = lazy(()=>import('./pages/About'))
+const Home = lazy(()=>import('../../pages/Home'))
+const About = lazy(()=>import('../../pages/About'))
 
 function App() {
   // const [message, setMessage] = useState('')

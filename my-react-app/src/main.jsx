@@ -11,10 +11,10 @@ const root = createRoot(document.getElementById('root'))
 root.render(
   <StrictMode>
     <BrowserRouter>
-    <Provider store={store}>
+    {/* <Provider store={store}> */}
       <App />
 
-    </Provider>
+    {/* </Provider> */}
     </BrowserRouter>
   </StrictMode>,
 )
