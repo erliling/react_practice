@@ -12,7 +12,7 @@ export default function index(props) {
         <h3>I'm  component A</h3>
         <h4>my username is: {name}</h4>
         <myContext.Provider value={{name, }}>
-            {props.children}
+            {props.erli(name)}
         </myContext.Provider>
     </div>
   )
