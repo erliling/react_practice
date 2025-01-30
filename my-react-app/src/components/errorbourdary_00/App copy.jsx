@@ -1,12 +1,12 @@
 import {createTheme, ThemeProvider, alpha, getContrastRatio} from '@mui/material/styles'
 
-import Count from './containers/Count'
-import Person from './containers/Person'
-import store from './redux/store'
-import A from './components/A'
-import B from './components/B'
-import C from './components/C'
-import ErrorBoundary from './components/ErrorBoundary'
+import Count from '../../containers/Count'
+import Person from '../../containers/Person'
+import store from '../../redux/store'
+import A from '../A'
+import B from '../B'
+import C from '../C'
+import ErrorBoundary from '../ErrorBoundary'
 
 
 import './App.css'

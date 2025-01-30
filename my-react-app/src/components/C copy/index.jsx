@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {myContext} from '../../context'
+import {myContext} from '../../../context'
 
 
 export default function index(props) {
